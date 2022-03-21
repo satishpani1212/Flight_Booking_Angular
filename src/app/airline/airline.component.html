@@ -1,0 +1,22 @@
+<!-- <p>airline works!</p> -->
+Name: <input [(ngModel)]='airline.name'><br>
+<!-- Status: <input [(ngModel)]='airline.status'> -->
+Status:<input type="radio" [(ngModel)]="airline.status" name='status' value="Active">Active
+<input type="radio" [(ngModel)]="airline.status" name='status' value="Block">Block <br>
+
+ <button (click)='save()'> save</button> <br>
+ <p></p>
+<table class="table">
+    <thead class='thead-dark'>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+    </thead>
+    <tbody >
+        <tr *ngFor='let airline of airlines; index as i'>
+            <td>{{airline.name}}</td>
+            <td>{{airline.status}}</td>
+            <td><button (click)='deleteRow(airline, i)'> delete</button></td>
+
+        </tr>
+    </tbody>
+</table>

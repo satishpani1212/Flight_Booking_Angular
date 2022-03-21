@@ -1,0 +1,30 @@
+<!-- <p>passenger works!</p> -->
+Name: <input [(ngModel)]='passenger.name'><br>
+<!-- gender: <input [(ngModel)]='passenger.gender'><br> -->
+Gender:<input type="radio" [(ngModel)]="passenger.gender" name='gender' value="Male">Male
+<input type="radio" [(ngModel)]="passenger.gender" name='gender' value="Female">Female <br>
+Age: <input [(ngModel)]='passenger.age'><br>
+Email: <input [(ngModel)]='passenger.email'><br>
+Phone: <input [(ngModel)]='passenger.phone'><br>
+<button (click)='save()'> save</button> <br>
+
+<table class="table">
+    <thead class='thead-dark'>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+    </thead>
+    <tbody >
+        <tr *ngFor='let passenger of passengers; index as i'>
+            <td>{{passenger.name}}</td>
+            <td>{{passenger.gender}}</td>
+            <td>{{passenger.age}}</td>
+            <td>{{passenger.email}}</td>
+            <td>{{passenger.phone}}</td>
+            <td><button (click)='deleteRow(passenger, i)'> delete</button></td>
+
+        </tr>
+    </tbody>
+</table>

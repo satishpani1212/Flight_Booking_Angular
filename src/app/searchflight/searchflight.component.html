@@ -1,0 +1,48 @@
+<p>searchflight works!</p>
+From:<input [(ngModel)]='flight1.from_city'><br>
+To: <input [(ngModel)]='flight1.to_city'><br>
+<!-- <select [(ngModel)]="flight1.from_city">
+    <option value="">Please Select</option>
+    <option *ngFor="let flight1 of flights1" [value]="flight1.from_city">{{flight1.from_city}}</option>
+    </select><br>
+To:
+<select [(ngModel)]="flight1.to_city">
+    <option value="">Please Select</option>
+    <option *ngFor="let flight1 of flights1" [value]="flight1.to_city">{{flight1.to_city}}</option>
+    </select><br> -->
+<button (click)='search()'> search</button> <br>
+
+<table class="table">
+  <thead class='thead-dark'>
+      <th scope="col">Name</th>
+      <th scope="col">Airline</th>
+      <th scope="col">Status</th>
+      <th scope="col">Rating</th>
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">Bussiness Seats</th>
+      <th scope="col">General Seats</th>
+      <th scope="col">Veg Meal Price</th>
+      <th scope="col">Non Veg Meal Price</th>
+      <th scope="col">Bussiness Seats Price</th>
+      <th scope="col">General Seats Price</th>
+      <th scope="col">Arrival</th>
+      <th scope="col">Departure</th>
+  </thead>
+
+  <tbody >
+      <tr *ngFor='let flight1 of flights1; index as i'>
+          <td>{{flight1.name}}</td>
+          <td>{{flight1.airline}}</td>
+          <td>{{flight1.rating}}</td>
+          <td>{{flight1.status}}</td>
+          <td>{{flight1.from_city}}</td>
+          <td>{{flight1.to_city}}</td>
+          <td>{{flight1.bussiness_seats}}</td>
+          <td>{{flight1.nonBussiness_seats}}</td>
+          <td>{{flight1.vegMeal_price}}</td>
+          <td>{{flight1.nonVegMeal_price}}</td>
+          <td>{{flight1.bussiness_seat_price}}</td>
+          <td>{{flight1.non_bussiness_seat_price}}</td>
+          <td>{{flight1.arrival_time}}</td>
+          <td>{{flight1.departure_time}}</td>

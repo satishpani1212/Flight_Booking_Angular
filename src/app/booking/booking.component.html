@@ -1,0 +1,51 @@
+<!-- <p>booking works!</p> -->
+Name: <input [(ngModel)]='booking.name'><br>
+Flight Name: <input [(ngModel)]='booking.flight_name'><br>
+<!-- Pnr: <input [(ngModel)]='booking.pnr'><br> -->
+Email: <input [(ngModel)]='booking.email'><br>
+Age: <input [(ngModel)]='booking.age'><br>
+Gender:<input type="radio" [(ngModel)]="booking.gender" name='gender' value="Male">Male
+<input type="radio" [(ngModel)]="booking.gender" name='gender' value="Female">Female <br>
+Meal:<input type="radio" [(ngModel)]="booking.meal_type" name='meal_type' value="Veg">Veg
+<input type="radio" [(ngModel)]="booking.meal_type" name='meal_type' value="Non veg">Non veg <br>
+Phone: <input [(ngModel)]='booking.phone'><br>
+Bussiness Seats: <input [(ngModel)]='booking.no_of_businessSeats'><br>
+General Seats: <input [(ngModel)]='booking.no_of_genaralSeats'><br>
+Seat Number: <input [(ngModel)]='booking.seat_number'><br>
+<button (click)='save()'> save</button> <br>
+
+<p></p>
+<table class="table">
+    <thead class='thead-dark'>
+        <th scope="col">Pnr</th>
+        <th scope="col">Flight Name</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Meal</th>
+        <th scope="col">Bussiness Seats</th>
+        <th scope="col">General Seats</th>
+        <th scope="col">Seat Number</th>
+    </thead>
+
+    <tbody >
+        <tr *ngFor='let booking of bookings; index as i'>
+            <td>{{booking.pnr}}</td>
+            <td>{{booking.flight_name}}</td>
+            <td>{{booking.name}}</td>
+            <td>{{booking.gender}}</td>
+            <td>{{booking.email}}</td>
+            <td>{{booking.age}}</td>
+            <td>{{booking.phone}}</td>
+            <td>{{booking.meal_type}}</td>
+            <td>{{booking.no_of_businessSeats}}</td>
+            <td>{{booking.no_of_genaralSeats}}</td>
+            <td>{{booking.seat_number}}</td>
+            <td><button (click)='deleteRow(booking.id)'> cancel</button></td>
+            <td><button (click)='updateBooking(booking)'> update</button></td>
+
+        </tr>
+    </tbody>
+</table>

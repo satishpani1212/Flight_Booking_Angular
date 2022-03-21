@@ -1,0 +1,61 @@
+<!-- <p>flight works!</p> -->
+Name: <input [(ngModel)]='flight.name'><br>
+Airline:
+<select [(ngModel)]="flight.airline">
+    <option value="">Please Select</option>
+    <option *ngFor="let airline of airlines" [value]="airline.name">{{airline.name}}</option>
+    </select><br>
+Status:<input type="radio" [(ngModel)]="flight.status" name='status' value="Active">Active
+<input type="radio" [(ngModel)]="flight.status" name='status' value="Block">Block <br>
+Rating: <input [(ngModel)]='flight.rating'><br>
+From: <input [(ngModel)]='flight.from_city'><br>
+To: <input [(ngModel)]='flight.to_city'><br>
+Bussiness Seats: <input [(ngModel)]='flight.bussiness_seats'><br>
+General seats: <input [(ngModel)]='flight.nonBussiness_seats'><br>
+Veg Meal Price: <input [(ngModel)]='flight.vegMeal_price'><br>
+Non veg Meal Price: <input [(ngModel)]='flight.nonVegMeal_price'><br>
+Bussiness seats Price: <input [(ngModel)]='flight.bussiness_seat_price'><br>
+Non bussiness seats Price: <input [(ngModel)]='flight.non_bussiness_seat_price'><br>
+Arrival: <input [(ngModel)]='flight.arrival_time' type="datetime-local"><br>
+Departure: <input [(ngModel)]='flight.departure_time' type="datetime-local"><br>
+<button (click)='save()'> save</button> <br>
+<p></p>
+<table class="table">
+    <thead class='thead-dark'>
+        <th scope="col">Name</th>
+      <th scope="col">Airline</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Status</th>
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">Bussiness Seats</th>
+      <th scope="col">General Seats</th>
+      <th scope="col">Veg Meal Price</th>
+      <th scope="col">Non Veg Meal Price</th>
+      <th scope="col">Bussiness Seats Price</th>
+      <th scope="col">General Seats Price</th>
+      <th scope="col">Arrival</th>
+      <th scope="col">Departure</th>
+    </thead>
+
+    <tbody >
+        <tr *ngFor='let flight of flights; index as i'>
+            <td>{{flight.name}}</td>
+            <td>{{flight.airline}}</td>
+            <td>{{flight.rating}}</td>
+            <td>{{flight.status}}</td>
+            <td>{{flight.from_city}}</td>
+            <td>{{flight.to_city}}</td>
+            <td>{{flight.bussiness_seats}}</td>
+            <td>{{flight.nonBussiness_seats}}</td>
+            <td>{{flight.vegMeal_price}}</td>
+            <td>{{flight.nonVegMeal_price}}</td>
+            <td>{{flight.bussiness_seat_price}}</td>
+            <td>{{flight.non_bussiness_seat_price}}</td>
+            <td>{{flight.arrival_time}}</td>
+            <td>{{flight.departure_time}}</td>
+            <td><button (click)='deleteRow(flight, i)'> delete</button></td>
+
+        </tr>
+    </tbody>
+</table>
